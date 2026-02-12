@@ -145,7 +145,6 @@ const Dashboard = ({ user, onLogout }) => {
                         </div>
                     )}
                 </div>
-                <div className="scroll-hint">Use horizontal scroll or wheel to navigate</div>
             </section>
 
             <div className="bg-decor decoration-1"></div>
