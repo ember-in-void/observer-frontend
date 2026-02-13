@@ -116,6 +116,8 @@ const Dashboard = ({ user, onLogout }) => {
                 <div className="carousel-container">
                     {loading ? (
                         <div className="loading-state">Initialising Systems...</div>
+                    ) : sections.length === 0 ? (
+                        <div className="loading-state">No connection to server or empty data.</div>
                     ) : (
                         <div className="carousel-3d">
                             {getVisibleIndices().map((virtualIndex) => {
