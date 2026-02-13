@@ -1,7 +1,6 @@
 // Authentication helper functions for Google OAuth
 
 const API_URL = process.env.REACT_APP_API_URL;
-const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 
 /**
  * Redirect to backend Google login endpoint
@@ -20,14 +19,14 @@ export const startGoogleLogin = (redirectAfter = '/') => {
 export const handleGoogleCallback = () => {
   const params = new URLSearchParams(window.location.search);
   const token = params.get('token');
-  
+
   if (token) {
     localStorage.setItem('authToken', token);
     // Clean up URL by removing query parameters
     window.history.replaceState({}, document.title, window.location.pathname);
     return token;
   }
-  
+
   return null;
 };
 
